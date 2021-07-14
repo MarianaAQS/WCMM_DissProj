@@ -19,8 +19,6 @@ const BLE_CHARACTERISTIC = '19B10101-E8F2-537E-4F6C-D104768A1214';
 })
 
 
-
-
 export class HomePage {
 
   linkMapaTemp: string;
@@ -63,8 +61,6 @@ export class HomePage {
         this.ble.connect(this.data.id).subscribe(
           peripheral => this.onConnected(peripheral),
         );
-
-
       }
       else
         this.dadosSensor = "Não ligado";
@@ -177,13 +173,10 @@ export class HomePage {
         });
       }
 
-
-
     }).catch((e) => {
       console.log(e);
     });
    
-
   }
 
 }
