@@ -10,8 +10,6 @@ import { ToastController, NavController } from '@ionic/angular';
 })
 
 
-
-
 export class BluetoothPage {
 
   devices: any[] = [];
