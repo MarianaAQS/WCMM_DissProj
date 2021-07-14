@@ -147,7 +147,7 @@ export class HomePage {
         });
       }
   
-      /*try {
+      try {
         this.sms.send(String(this.sessionVar.phone2), this.sessionVar.mensagemSMS + " " + this.linkMapaTemp, options);
         const toast = this.toast.create({
           message: 'Alert was sent!',
@@ -175,7 +175,7 @@ export class HomePage {
           message: 'Alert was not sent!',
           duration: 3000
         });
-      }*/
+      }
 
 
 
