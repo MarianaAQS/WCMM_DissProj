@@ -33,11 +33,6 @@ export class DetailBlePage {
     private ngZone: NgZone) {
 
 
-
-
-
-
-
     this.route.queryParams.subscribe(params => {
       if (params && params.device) {
         this.data = JSON.parse(params.device);
@@ -46,8 +41,6 @@ export class DetailBlePage {
         this.ble.connect(this.data.id).subscribe(
           peripheral => this.onConnected(peripheral),
         );
-
-
       }
 
     });
@@ -98,14 +91,11 @@ export class DetailBlePage {
 
 
   linkHome() {
-
-
     let navigationExtras: NavigationExtras = {
       queryParams: {
         device: JSON.stringify(this.data)
       }
     };
-
 
     this.router.navigate(['/home'], navigationExtras);
 
