@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <access origin="*" />
+  
+  <feature name="BLE">
+    <param name="android-package" value="com.megster.cordova.ble.central.BLECentralPlugin"/>
+  </feature>
+
+  <feature name="Camera">
+    <param name="android-package" value="org.apache.cordova.camera.CameraLauncher"/>
+  </feature>
+
+  <feature name="Geolocation">
+    <param name="android-package" value="org.apache.cordova.geolocation.Geolocation"/>
+  </feature>
+
+  <feature name="Sms">
+    <param name="android-package" value="com.cordova.plugins.sms.Sms"/>
+  </feature>
+
+  
+</widget>

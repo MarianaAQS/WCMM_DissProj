@@ -1,0 +1,8 @@
+{
+  "name": "WCMM1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "8f1e6224"
+}

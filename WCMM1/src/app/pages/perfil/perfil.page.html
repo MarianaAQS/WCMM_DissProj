@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="primary">Profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">First Name</ion-label>
+    <ion-input type ="text" name="txtName" [(ngModel)]="nome" (change)="SetName()"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Last Name</ion-label>
+    <ion-input type ="text" name="txtLastname" [(ngModel)]="sobrenome" (change)="SetLastName()"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Age</ion-label>
+    <ion-input type="number" name="txtAge" [(ngModel)]="idade"  (change)="SetAge()"></ion-input>
+  </ion-item>
+  
+  <ion-list>
+    <ion-radio-group>
+      <ion-list-header>
+        <ion-label>Gender</ion-label>
+      </ion-list-header>
+
+      <ion-list>
+        <ion-radio-group  allow-empty-selection="true" name="radio-group" (ionChange)="radioGroupChange($event)" #radioGroup>
+          <ion-item *ngFor="let item of radio_list">
+            <ion-label>{{item.text}}</ion-label>
+            <ion-radio slot="start" name="{{item.name}}" value="{{item.value}}" 
+              disabled="{{item.disabled}}"></ion-radio>
+          </ion-item>
+    
+        </ion-radio-group>
+      </ion-list>
+
+      
+    </ion-radio-group>
+  </ion-list>
+</ion-content>

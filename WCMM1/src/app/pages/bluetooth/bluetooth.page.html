@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="primary">Bluetooth</ion-title>
+    <ion-button color="primary" shape="round" (click)="Scan()" slot="end" class="Scan-button">
+      <ion-icon name="Bluetooth"></ion-icon>
+      <p>Scan</p>
+    </ion-button>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let device of devices" >
+      <ion-label>
+        <h2>{{device.name || 'Unnamed'}}</h2>
+        <p>{{device.id}}</p>
+        <p> RSSI: {{device.rssi}}</p>
+      </ion-label>  
+      <ion-button color="success" (click)="deviceSelected(device)" shape="round">
+        Connect
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <p>{{ statusMessage }}</p>
+  </ion-toolbar>
+</ion-footer>
+
+

@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="primary">Medication</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Name</ion-label>
+    <ion-input type ="text" name="txtNameMed" [(ngModel)]="nome_med" (change)="SetName_Med()"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Dose</ion-label>
+    <ion-input type ="text" name="txtDose" [(ngModel)]="dose" (change)="SetDose()"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Add Reminder</ion-label>
+    <ion-icon slot="start" name="notifications"></ion-icon>
+    <ion-checkbox color="secondary" slot="end"></ion-checkbox>
+  </ion-item>
+ 
+  <ion-item>
+    <ion-label>Start</ion-label>
+    <ion-icon slot="start" name="calendar"></ion-icon>
+    <ion-datetime displayFormat="D MMM YYYY H:mm" min="2005" max="2030"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>End</ion-label>
+    <ion-icon slot="start" name="calendar"></ion-icon>
+    <ion-datetime displayFormat="D MMM YYYY H:mm" min="2005" max="2030"></ion-datetime>
+  </ion-item>
+
+  <ion-list>
+    <ion-radio-group>
+      <ion-list-header >
+        <ion-label>Repeat</ion-label>
+      </ion-list-header>
+      
+      <ion-list>
+        <ion-radio-group  allow-empty-selection="true" name="radio-group" (ionChange)="radioGroupChange($event)" #radioGroup>
+          <ion-item *ngFor="let item of radio_list">
+            <ion-label>{{item.text}}</ion-label>
+            <!--
+            <ion-radio slot="start" name="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}"
+              color="{{item.color}}" disabled="{{item.disabled}}"></ion-radio>
+            -->
+              <ion-radio slot="start" name="{{item.name}}" value="{{item.value}}"></ion-radio>
+          </ion-item>
+    
+        </ion-radio-group>
+      </ion-list>
+
+
+      <!--ion-item>
+        <ion-label>Never</ion-label>
+        <ion-datetime></ion-datetime>
+        <ion-radio slot="start" value="nunca"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Every day</ion-label>
+        <ion-datetime dayValues="01,02,03,04,05,06,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31"></ion-datetime>
+        <ion-radio slot="start" value="diariamente"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Every week</ion-label>
+        <ion-datetime weekValues="1,2,3,4"></ion-datetime>
+        <ion-radio slot="start" value="semanalmente"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Every month</ion-label>
+        <ion-datetime monthValues="1,2,3,4,5,6,7,8,9,10,11,12"></ion-datetime>
+        <ion-radio slot="start" value="mensalmente"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Every year</ion-label>
+        <ion-datetime yearValues="2021,2022,2023,2024,2025,2026,2027,2028,2029,2030"></ion-datetime>
+        <ion-radio slot="start" value="anualmente"></ion-radio>
+      </ion-item-->
+    </ion-radio-group>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,66 @@
+<ion-app>
+   <ion-menu side="start" menuId="first" contentId="main">
+     <ion-header>
+       <ion-toolbar>
+         <ion-title color="primary">Menu</ion-title>
+       </ion-toolbar>
+     </ion-header>
+     
+     <ion-content>
+         <ion-card color="translucent">
+           <div class="img-wrapper">
+             <img src="{{sessionVar.profilePicture}}"/>
+               <ion-button color="light" (click)="openActionSheet()">
+               <ion-icon slot="icon-only" name="camera-outline" color="medium"></ion-icon>
+              </ion-button>
+            </div>
+            <ion-card-content class="ion-text-center">
+              <h2>
+                <ion-label style="color:white">{{sessionVar.profileName}}</ion-label>
+
+              </h2>
+            </ion-card-content>
+          </ion-card>
+          
+          <ion-list>
+            <ion-menu-toggle>
+              <ion-item routerLink="/perfil">
+                <ion-label>Profile</ion-label>
+                <ion-icon slot="start" name="person" color="primary"></ion-icon>
+              </ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle>
+              <ion-item routerLink="/medicacao">
+                <ion-label>Medication</ion-label>
+                <ion-icon slot="start" name="medkit" color="primary"></ion-icon>
+              </ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle>
+              <ion-item routerLink="/contactos">
+                <ion-label>Emergency Contacts</ion-label>
+                <ion-icon slot="start" name="call" color="primary"></ion-icon>
+              </ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle>
+              <ion-item routerLink="/config">
+                <ion-label>Settings</ion-label>
+                <ion-icon slot="start" name="settings" color="primary"></ion-icon>
+              </ion-item>
+            </ion-menu-toggle>
+            <!--ion-menu-toggle>
+             <ion-item routerLink="/instrucoes">
+                <ion-label>Instructions</ion-label>
+                <ion-icon slot="start" name="book"></ion-icon>
+              </ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle>
+             <ion-item routerLink="/sobre">
+                <ion-label>About us</ion-label>
+                <ion-icon slot="start" name="information-circle" color="primary"></ion-icon>
+              </ion-item>
+            </ion-menu-toggle-->
+          </ion-list>
+      </ion-content>
+   </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

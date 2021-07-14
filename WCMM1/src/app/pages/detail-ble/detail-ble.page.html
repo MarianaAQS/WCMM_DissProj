@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ peripheral.name || 'Device' }}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="bluetooth"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="padding">
+
+  <ion-card>
+    <ion-card-header>
+        {{ peripheral.name || 'Unnamed' }}
+    </ion-card-header>
+    <ion-card-content>
+        {{ peripheral.id }}
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      Services
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item *ngFor="let service of peripheral.services">
+        {{service}}
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    
+    <ion-card>
+      <ion-card-header>
+        Details
+      </ion-card-header>
+      <ion-card-content>
+        <pre>{{peripheral | json }}</pre>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        HomePage
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button color="success" (click)="linkHome()" shape="round">
+          Go
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+  
+  <ion-footer>
+    <ion-toolbar>
+        <ion-item>
+            <ion-label>{{ statusMessage }}</ion-label>
+        </ion-item>
+    </ion-toolbar>
+  </ion-footer>

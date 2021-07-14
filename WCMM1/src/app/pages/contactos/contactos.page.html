@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="primary">Emergency Contacts</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Contact 1</ion-label>
+    <ion-input [(ngModel)]="phoneNumber1" type="text" (change)="SetNumber1()"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Contact 2</ion-label>
+    <ion-input [(ngModel)]="phoneNumber2" type="text" (change)="SetNumber2()"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Contact 3</ion-label>
+    <ion-input [(ngModel)]="phoneNumber3" type="text" (change)="SetNumber3()"></ion-input>
+  </ion-item>
+  
+</ion-content>

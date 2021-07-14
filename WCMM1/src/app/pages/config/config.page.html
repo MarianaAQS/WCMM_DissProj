@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="primary">Settings</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+
+<ion-content [fullscreen]="true">
+  <div class="slides ion-margin-bottom">
+    <ion-slides >
+      <ion-slide>
+        <ion-card style="width: 100%;margin: 0;">
+            <ion-card-content class="ion-text-center" >
+              <ion-item routerLink="/bluetooth">
+
+              <ion-label>Bluetooth</ion-label>
+              <ion-icon color="primary" slot="start" name="Bluetooth"></ion-icon>
+              </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+</ion-content>
+

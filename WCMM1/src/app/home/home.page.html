@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="primary">Epilepsy Controller</ion-title>
+  </ion-toolbar>
+
+<ion-item lines="none">
+  <ion-avatar slot="start">
+    <img src="{{sessionVar.profilePicture}}">
+  </ion-avatar>
+   <ion-label>
+     <p>Hello,</p>
+     <h3>
+      <ion-label style="color:black">{{sessionVar.profileName}}</ion-label>
+    </h3>
+  </ion-label>
+</ion-item>
+
+<ion-item lines="none">
+  <ion-title class="ion-text-center custom-font" color="primary" >{{today | date:'EEEE | MMM dd, yyyy'}}</ion-title>
+</ion-item>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="slides ion-margin-bottom">
+    <ion-slides >
+      <ion-slide>
+        <ion-card>
+            <ion-card-content class="ion-text-left">
+              <ion-card-title class="ion-margin-bottom" color="primary">Cortisol</ion-card-title>
+              <ion-card-subtitle class="ion-text-right">{{concentration}} mM</ion-card-subtitle>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+    <ion-button class="Seizure-button" color="danger" shape="round" (click)="sendSMS()">Seizure</ion-button>
+
+</ion-content>
